@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "run_id": "20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-",
+  "status": "normalized",
+  "normalized_at": "2026-06-09T05:31:54.707Z",
+  "source_file": "/Users/zongxinghuang/MyWorks/work-ifly/research/ai/imfine-demo1/.imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/orchestration/orchestrator-session.json"
+}

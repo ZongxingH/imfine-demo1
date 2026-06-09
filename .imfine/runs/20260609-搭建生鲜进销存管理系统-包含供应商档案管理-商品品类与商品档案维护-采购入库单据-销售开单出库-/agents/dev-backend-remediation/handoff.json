@@ -1,0 +1,54 @@
+{
+  "role": "dev-backend-remediation",
+  "run_id": "20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-",
+  "status": "completed",
+  "files_modified": [
+    "backend/src/main/java/com/imfine/freshinventory/service/PurchaseService.java",
+    "backend/src/test/java/com/imfine/freshinventory/FreshInventoryApiTest.java",
+    ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/agents/dev-backend-remediation/handoff.json"
+  ],
+  "fixes": [
+    {
+      "title": "Prevent negative stock when editing purchase documents",
+      "details": "PurchaseService.update now validates the projected stock for every product affected by the replacement before deleting existing purchase movements. It aggregates old and requested quantities by product and rejects edits with ErrorCode.INSUFFICIENT_STOCK if projected stock would become negative."
+    }
+  ],
+  "tests_added": [
+    "Purchase reduction after dependent sales is rejected and current stock remains stable.",
+    "Category detail endpoint assertion.",
+    "Product edit endpoint assertion.",
+    "Purchase detail endpoint assertion.",
+    "Sales detail endpoint assertion.",
+    "Duplicate purchase order number rejection.",
+    "Duplicate sales order number rejection.",
+    "Inactive product rejection for purchase documents.",
+    "Inactive product rejection for sales documents."
+  ],
+  "verification_commands": [
+    {
+      "command": "mvn test",
+      "workdir": "backend/",
+      "sandbox": "default",
+      "result": "failed before assertions: Mockito/Byte Buddy inline mock maker could not self-attach to the current JVM; Tests run: 12, Failures: 0, Errors: 12, Skipped: 0"
+    },
+    {
+      "command": "mvn test",
+      "workdir": "backend/",
+      "sandbox": "escalated",
+      "result": "passed: Tests run: 12, Failures: 0, Errors: 0, Skipped: 0; BUILD SUCCESS"
+    }
+  ],
+  "known_issues": [
+    "Sandboxed Maven test execution is still blocked by the local JVM attach limitation for Mockito/Byte Buddy; the same command passed when rerun with approved escalation.",
+    "Frontend build remediation was outside this backend remediation agent's write ownership."
+  ],
+  "next_roles": [
+    "qa",
+    "reviewer"
+  ],
+  "provider_notes": [
+    "Read reviewer evidence before implementation and scoped changes to backend/** plus this handoff file.",
+    "Reused existing global ApiException response shape and existing ErrorCode.INSUFFICIENT_STOCK for purchase edit reconciliation failures.",
+    "Did not modify frontend, QA/review evidence, final gates, or orchestration/orchestrator-session.json."
+  ]
+}

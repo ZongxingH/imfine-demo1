@@ -1,0 +1,63 @@
+{
+  "role": "merge-remediation",
+  "run_id": "20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-",
+  "status": "completed",
+  "files_modified": [
+    ".gitignore",
+    ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/agents/merge-remediation/handoff.json"
+  ],
+  "index_actions": [
+    {
+      "action": "unstage_generated_frontend_artifacts",
+      "command": "git restore --staged frontend/tsconfig.node.tsbuildinfo frontend/tsconfig.tsbuildinfo frontend/vite.config.d.ts frontend/vite.config.js",
+      "result": "failed",
+      "notes": "Initial repository has no resolvable HEAD, so git restore --staged could not be used."
+    },
+    {
+      "action": "unstage_generated_frontend_artifacts",
+      "command": "git rm --cached -- frontend/tsconfig.node.tsbuildinfo frontend/tsconfig.tsbuildinfo frontend/vite.config.d.ts frontend/vite.config.js",
+      "result": "completed",
+      "paths": [
+        "frontend/tsconfig.node.tsbuildinfo",
+        "frontend/tsconfig.tsbuildinfo",
+        "frontend/vite.config.d.ts",
+        "frontend/vite.config.js"
+      ],
+      "notes": "Removed only the four generated files from the Git index. Files were left on disk."
+    }
+  ],
+  "validation": {
+    "commands": [
+      {
+        "command": "git status --short --ignored -- frontend/tsconfig.node.tsbuildinfo frontend/tsconfig.tsbuildinfo frontend/vite.config.d.ts frontend/vite.config.js .gitignore .imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/agents/merge-remediation/handoff.json",
+        "result": "AM .gitignore\n?? .imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/agents/merge-remediation/handoff.json\n!! frontend/tsconfig.node.tsbuildinfo\n!! frontend/tsconfig.tsbuildinfo\n!! frontend/vite.config.d.ts\n!! frontend/vite.config.js"
+      },
+      {
+        "command": "ls -l frontend/tsconfig.node.tsbuildinfo frontend/tsconfig.tsbuildinfo frontend/vite.config.d.ts frontend/vite.config.js",
+        "result": "All four generated files exist on disk after unstaging."
+      },
+      {
+        "command": "git diff -- .gitignore",
+        "result": "Added *.tsbuildinfo, frontend/vite.config.js, and frontend/vite.config.d.ts ignore rules."
+      },
+      {
+        "command": "git diff --cached --name-status -- frontend/tsconfig.node.tsbuildinfo frontend/tsconfig.tsbuildinfo frontend/vite.config.d.ts frontend/vite.config.js",
+        "result": "No output; none of the four generated frontend artifacts are staged."
+      },
+      {
+        "command": "jq empty .imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/agents/merge-remediation/handoff.json",
+        "result": "No output; handoff JSON is valid."
+      }
+    ],
+    "target_paths_staged": false,
+    "target_paths_ignored": true,
+    "target_paths_present_on_disk": true
+  },
+  "next_roles": [
+    "committer"
+  ],
+  "provider_notes": {
+    "provider": "codex",
+    "notes": "Remediation followed strict write ownership. No backend/frontend source, README, QA/review evidence, final gates, archive, or orchestrator session files were modified."
+  }
+}

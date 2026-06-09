@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "run_id": "20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-",
+  "generated_at": "2026-06-09T03:01:51.700Z",
+  "sources": {
+    "openspec_inspired": [
+      {
+        "artifact": "request",
+        "evidence": "request/"
+      },
+      {
+        "artifact": "analysis",
+        "evidence": "analysis/"
+      },
+      {
+        "artifact": "spec-delta",
+        "evidence": "spec-delta/"
+      },
+      {
+        "artifact": "archive",
+        "evidence": "archive/"
+      },
+      {
+        "artifact": "capabilities",
+        "evidence": ".imfine/project/capabilities/"
+      }
+    ],
+    "superpowers_inspired_skills": [
+      "clarify",
+      "project-analysis",
+      "write-delivery-plan",
+      "execute-task-plan",
+      "tdd",
+      "systematic-debugging",
+      "parallel-agent-dispatch",
+      "code-review",
+      "archive-confirmation"
+    ],
+    "bmad_inspired_roles": [],
+    "imfine_specific_contracts": [
+      {
+        "contract": "true-harness",
+        "evidence": ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/orchestration/true-harness-evidence.json"
+      },
+      {
+        "contract": "provider-receipts",
+        "evidence": "orchestration/provider-receipts/"
+      },
+      {
+        "contract": "dispatch-contracts",
+        "evidence": "orchestration/dispatch-contracts.json"
+      },
+      {
+        "contract": "handoff-validation",
+        "evidence": "agents/*/handoff.json"
+      }
+    ]
+  },
+  "skill_evidence_contracts": {
+    "passed": true,
+    "checks": []
+  }
+}

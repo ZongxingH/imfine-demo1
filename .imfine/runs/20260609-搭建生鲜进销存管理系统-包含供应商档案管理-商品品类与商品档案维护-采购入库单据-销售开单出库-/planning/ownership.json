@@ -1,0 +1,135 @@
+{
+  "run_id": "20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-",
+  "schema_version": 1,
+  "planning_owner": "task-planner",
+  "principles": [
+    "Planning artifacts only are owned by the task-planner.",
+    "Application source implementation is owned by downstream implementation agents.",
+    "Preset common utility code is read-only for all roles unless the user explicitly changes the requirement.",
+    "No role may modify .imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/orchestration/orchestrator-session.json except the orchestrator."
+  ],
+  "roles": [
+    {
+      "role": "architect",
+      "owns": [
+        ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/design/**",
+        ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/agents/architect/handoff.json"
+      ],
+      "responsibilities": [
+        "Confirm framework and data model choices for the new project.",
+        "Define layered backend architecture, REST conventions, validation approach, and frontend integration assumptions."
+      ]
+    },
+    {
+      "role": "backend-dev",
+      "owns": [
+        "backend/**",
+        "pom.xml",
+        "mvnw",
+        "mvnw.cmd",
+        ".mvn/**"
+      ],
+      "responsibilities": [
+        "Implement layered backend, database tables, REST APIs, service logic, and API tests.",
+        "Cover supplier, category, product, purchase inbound, sales outbound, realtime inventory, and slow-moving report tasks.",
+        "Reuse global exception and validation utilities through approved integration points."
+      ],
+      "must_not_modify": [
+        "preset common utility source files",
+        ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/orchestration/orchestrator-session.json"
+      ]
+    },
+    {
+      "role": "frontend-dev",
+      "owns": [
+        "frontend/**"
+      ],
+      "responsibilities": [
+        "Implement PC admin pages for supplier, category, product, purchase inbound, sales outbound, inventory, and slow-moving report.",
+        "Implement add, edit, paginated query, and form validation flows aligned to backend contracts."
+      ],
+      "must_not_modify": [
+        "backend/**",
+        ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/orchestration/orchestrator-session.json"
+      ]
+    },
+    {
+      "role": "qa",
+      "owns": [
+        ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/evidence/test-results.md",
+        ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/acceptance-matrix.json",
+        ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/agents/qa/handoff.json"
+      ],
+      "responsibilities": [
+        "Run and record backend and frontend verification.",
+        "Map every required capability to implementation and test evidence.",
+        "Request remediation for failed or missing required coverage."
+      ],
+      "must_not_modify": [
+        "backend/**",
+        "frontend/**",
+        ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/orchestration/orchestrator-session.json"
+      ]
+    },
+    {
+      "role": "reviewer",
+      "owns": [
+        ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/evidence/review.md",
+        ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/agents/reviewer/handoff.json"
+      ],
+      "responsibilities": [
+        "Perform adversarial review for bugs, missing tests, validation gaps, architecture violations, and utility modification violations.",
+        "Ground findings in file and line references where possible."
+      ],
+      "must_not_modify": [
+        "backend/**",
+        "frontend/**",
+        ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/orchestration/orchestrator-session.json"
+      ]
+    },
+    {
+      "role": "committer",
+      "owns": [
+        ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/final-gates.json",
+        ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/agents/committer/handoff.json"
+      ],
+      "responsibilities": [
+        "Evaluate final gate readiness after QA and reviewer outcomes are resolved.",
+        "Prepare local implementation commit plan according to commit-plan.md and runtime policy."
+      ]
+    },
+    {
+      "role": "technical-writer",
+      "owns": [
+        "README.md",
+        ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/agents/technical-writer/handoff.json"
+      ],
+      "responsibilities": [
+        "Document setup, test commands, and system usage only after implementation choices are known."
+      ]
+    },
+    {
+      "role": "archive",
+      "owns": [
+        ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/archive/**",
+        ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/agents/archive/handoff.json"
+      ],
+      "responsibilities": [
+        "Preserve final run evidence, delivery summary, verification results, and unresolved risks or blockers."
+      ]
+    }
+  ],
+  "task_to_primary_owner": {
+    "T00-architecture-foundation": "architect, backend-dev",
+    "T01-supplier-management": "backend-dev",
+    "T02-category-product-management": "backend-dev",
+    "T03-purchase-inbound": "backend-dev",
+    "T04-sales-outbound": "backend-dev",
+    "T05-realtime-inventory": "backend-dev",
+    "T06-slow-moving-report": "backend-dev",
+    "T07-pc-admin-ui": "frontend-dev",
+    "T08-rest-api-test-completion": "backend-dev",
+    "T09-qa-acceptance": "qa",
+    "T10-review-final-gates": "reviewer, committer, archive"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "run_id": "20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-",
+  "generated_at": "2026-06-09T05:31:54.717Z",
+  "status": "blocked",
+  "project_kind": "new_project",
+  "declared_runtime": {
+    "languages": [],
+    "files": []
+  },
+  "observed_runtime_versions": [],
+  "qa_evidence": {
+    "file": ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/evidence/test-results.md",
+    "records_runtime_version": false,
+    "records_test_command": true,
+    "records_test_output": true
+  },
+  "checks": [
+    {
+      "id": "project_docs",
+      "status": "pass",
+      "detail": "new project delivery requires README or runbook",
+      "evidence": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "runtime_version_declaration",
+      "status": "blocked",
+      "detail": "no language manifest detected; runtime declaration still required before archive",
+      "evidence": []
+    },
+    {
+      "id": "runtime_version_observed",
+      "status": "blocked",
+      "detail": "no declared or detected runtime to observe",
+      "evidence": []
+    },
+    {
+      "id": "qa_records_runtime_version",
+      "status": "blocked",
+      "detail": "QA evidence must include actual runtime version output",
+      "evidence": [
+        ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/evidence/test-results.md"
+      ]
+    },
+    {
+      "id": "qa_records_test_command",
+      "status": "pass",
+      "detail": "QA evidence must include executed test command",
+      "evidence": [
+        ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/evidence/test-results.md"
+      ]
+    },
+    {
+      "id": "qa_records_test_output",
+      "status": "pass",
+      "detail": "QA evidence must include actual test output, not just a summary word",
+      "evidence": [
+        ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/evidence/test-results.md"
+      ]
+    }
+  ]
+}

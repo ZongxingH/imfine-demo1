@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "run_id": "20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-",
+  "generated_by": "archive",
+  "evidence": [
+    {
+      "path": ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/final-gates.json",
+      "purpose": "Final implementation gate decision and commit readiness summary.",
+      "status": "ready_for_commit"
+    },
+    {
+      "path": ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/acceptance-matrix.json",
+      "purpose": "Capability-by-capability acceptance coverage, verification commands, and residual risks.",
+      "status": "pass"
+    },
+    {
+      "path": ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/evidence/test-results.md",
+      "purpose": "QA revalidation notes for backend Maven tests, frontend build, and final QA classification.",
+      "status": "pass_after_backend_escalation"
+    },
+    {
+      "path": ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/evidence/review.md",
+      "purpose": "Reviewer revalidation evidence showing prior findings remediated and no blocking findings remain.",
+      "status": "approved_with_risks"
+    },
+    {
+      "path": ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/agents/committer/handoff.json",
+      "purpose": "Committer decision, final gate summary, commit recommendation, and residual risks.",
+      "status": "ready_for_commit"
+    },
+    {
+      "path": ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/agents/qa-revalidation/handoff.json",
+      "purpose": "Final QA handoff declaring required coverage complete with backend pass after escalation and frontend build pass.",
+      "status": "pass"
+    },
+    {
+      "path": ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/agents/reviewer-revalidation/handoff.json",
+      "purpose": "Final review handoff approving remediation with documented residual risks.",
+      "status": "completed"
+    },
+    {
+      "path": ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/agents/merge-agent/handoff.json",
+      "purpose": "Merge agent completion record before committer/archive.",
+      "status": "completed"
+    },
+    {
+      "path": ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/agents/technical-writer/handoff.json",
+      "purpose": "README documentation handoff and documentation caveats.",
+      "status": "completed"
+    },
+    {
+      "path": ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/agents/project-knowledge-updater/handoff.json",
+      "purpose": "Project knowledge refresh handoff.",
+      "status": "completed"
+    },
+    {
+      "path": ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/orchestration/true-harness-evidence.json",
+      "purpose": "Runtime true-harness receipt evidence; stale and not closed for provider-origin receipts.",
+      "status": "blocked_stale"
+    },
+    {
+      "path": ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/orchestration/blocker-summary.json",
+      "purpose": "Runtime blocker summary for provider capability/receipts and session validation.",
+      "status": "blocked"
+    },
+    {
+      "path": ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/orchestration/state.json",
+      "purpose": "Current runtime state showing true_harness execution mode and blocked status.",
+      "status": "blocked"
+    },
+    {
+      "path": ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/run.json",
+      "purpose": "Run metadata, source requirement, commit policy, and final blocked runtime reason.",
+      "status": "blocked"
+    }
+  ]
+}

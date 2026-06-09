@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "role": "archive",
+  "run_id": "20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-",
+  "status": "archive_created_runtime_evidence_blocked",
+  "files_created": [
+    ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/archive/summary.md",
+    ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/archive/evidence-index.json",
+    ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/agents/archive/handoff.json"
+  ],
+  "archive_summary": {
+    "delivered_capabilities": [
+      "Supplier archive management.",
+      "Product category and product archive maintenance.",
+      "Purchase inbound documents.",
+      "Sales outbound documents.",
+      "Realtime inventory accounting.",
+      "Slow-moving product report.",
+      "Layered backend REST/data model with shared exception and validation utilities.",
+      "PC admin frontend pages with add/edit, paginated query, and form validation."
+    ],
+    "verification_results": {
+      "final_gates": "ready_for_commit; 9 required gates passed, 0 failed.",
+      "acceptance_matrix": "pass; required coverage declared complete; no blocked required items.",
+      "backend_tests": "Default sandbox mvn test blocked by Mockito/ByteBuddy JVM self-attach; approved escalated mvn test passed with 12 tests, 0 failures, 0 errors.",
+      "frontend_build": "npm run build passed in default sandbox.",
+      "review": "approved_with_risks; no blocking findings remain."
+    },
+    "commit_readiness": "Implementation gates are ready for commit. Committer handoff recommends proceeding after the orchestrator/user-approved commit step. No git commit was run by the committer agent.",
+    "runtime_true_harness_limitation": "Runtime true-harness evidence is not closed. Current runtime status is blocked; true-harness evidence is stale, true_harness_passed=false, and provider-origin receipts are not closed."
+  },
+  "unresolved_risks": [
+    "Backend Maven verification requires approved escalation in this environment because default sandbox JVM self-attach fails before assertions.",
+    "Frontend coverage has no browser E2E or unit tests; verification is source inspection plus production build.",
+    "Backend integration tests do not exhaustively cover every optional filter/date-range branch.",
+    "Runtime provider-origin receipts are not closed and session validation remains blocked/stale, so the run must not be claimed as runtime-completed true harness evidence."
+  ],
+  "runtime_evidence_status": {
+    "implementation_gates_ready": true,
+    "runtime_run_status": "blocked",
+    "true_harness_passed": false,
+    "provider_origin_receipts_closed": false,
+    "valid_provider_receipt_count": 0,
+    "evidence_freshness": "stale_relative_to_later_final_gates",
+    "blocking_evidence_files": [
+      ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/orchestration/true-harness-evidence.json",
+      ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/orchestration/blocker-summary.json",
+      ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/orchestration/state.json",
+      ".imfine/runs/20260609-搭建生鲜进销存管理系统-包含供应商档案管理-商品品类与商品档案维护-采购入库单据-销售开单出库-/run.json"
+    ],
+    "archive_statement": "Implementation gates are ready and archived; runtime evidence remains blocked/stale."
+  },
+  "next_roles": [
+    "orchestrator",
+    "commit-step"
+  ],
+  "provider_notes": [
+    "Read final-gates.json, acceptance-matrix.json, evidence/test-results.md, evidence/review.md, agents/committer/handoff.json, key role handoffs, run.json, orchestration/state.json, orchestration/true-harness-evidence.json, and orchestration/blocker-summary.json.",
+    "Write ownership was limited to archive/** and agents/archive/handoff.json.",
+    "Did not modify backend, frontend, README, project knowledge, QA/review evidence, final gates, or orchestration/orchestrator-session.json.",
+    "Archive intentionally distinguishes implementation commit readiness from runtime true-harness completion.",
+    "No runtime completion is claimed because provider-origin receipts are not closed and runtime state remains blocked."
+  ]
+}
